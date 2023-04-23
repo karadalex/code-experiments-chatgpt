@@ -20,3 +20,13 @@ Some commits may also include the prompts that were used to generate the code of
 - Web applications & Full stack web development
 - Blockchain
 - Quantum Computing
+- Mobile Development
+
+## Technologies used
+
+- Tensorflow
+- Numpy
+- Mujoco
+- FastAPI
+- React Native
+- qiskit
