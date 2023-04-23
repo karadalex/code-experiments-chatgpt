@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image
           style={styles.profilePic}
@@ -30,20 +30,14 @@ const App = () => {
         </View>
       </View>
       <View style={styles.photos}>
-        <Image
-          style={styles.photo}
-          source={{uri: 'https://via.placeholder.com/300'}}
-        />
-        <Image
-          style={styles.photo}
-          source={{uri: 'https://via.placeholder.com/300'}}
-        />
-        <Image
-          style={styles.photo}
-          source={{uri: 'https://via.placeholder.com/300'}}
-        />
+        {[...Array(100)].map((value, index) => 
+          <Image
+            style={styles.photo}
+            source={{uri: 'https://via.placeholder.com/300'}}
+          />
+        )}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -51,7 +45,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 10,
+    paddingTop: 50, // fixed top padding
+    paddingHorizontal: 10,
   },
   header: {
     flexDirection: 'row',
@@ -101,6 +96,7 @@ const styles = StyleSheet.create({
   },
   photo: {
     width: '32%',
+    height: "100%",
     aspectRatio: 1,
     marginBottom: 10,
   },
