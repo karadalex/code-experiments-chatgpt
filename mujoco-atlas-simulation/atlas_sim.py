@@ -2,6 +2,8 @@ import mujoco_py
 
 model = mujoco_py.load_model_from_path('atlas.xml')
 sim = mujoco_py.MjSim(model)
+view = mujoco_py.MjViewer(sim)
 
 while True:
     sim.step()
+    view.render()
