@@ -1,105 +1,25 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import BottomTabNavigator from './BottomTabNavigator';
+import AddPostScreen from './AddPostScreen';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Image
-          style={styles.profilePic}
-          source={{uri: 'https://via.placeholder.com/150'}}
-        />
-        <View style={styles.userInfo}>
-          <Text style={styles.username}>JohnDoe</Text>
-          <Text style={styles.bio}>Software Developer</Text>
-          <Text style={styles.location}>San Francisco, CA</Text>
-        </View>
-      </View>
-      <View style={styles.stats}>
-        <View style={styles.stat}>
-          <Text style={styles.statNumber}>100</Text>
-          <Text style={styles.statTitle}>Posts</Text>
-        </View>
-        <View style={styles.stat}>
-          <Text style={styles.statNumber}>1k</Text>
-          <Text style={styles.statTitle}>Followers</Text>
-        </View>
-        <View style={styles.stat}>
-          <Text style={styles.statNumber}>1k</Text>
-          <Text style={styles.statTitle}>Following</Text>
-        </View>
-      </View>
-      <View style={styles.photos}>
-        {[...Array(100)].map((value, index) => 
-          <Image
-            style={styles.photo}
-            source={{uri: 'https://via.placeholder.com/300'}}
-          />
-        )}
-      </View>
-    </ScrollView>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Home" component={BottomTabNavigator} />
+        <Stack.Screen name="AddPost" component={AddPostScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: 50, // fixed top padding
-    paddingHorizontal: 10,
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  profilePic: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    marginRight: 10,
-  },
-  userInfo: {
-    flex: 1,
-  },
-  username: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    marginBottom: 5,
-  },
-  bio: {
-    color: '#aaa',
-    marginBottom: 5,
-  },
-  location: {
-    color: '#aaa',
-  },
-  stats: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10,
-  },
-  stat: {
-    alignItems: 'center',
-  },
-  statNumber: {
-    fontWeight: 'bold',
-    fontSize: 18,
-  },
-  statTitle: {
-    color: '#aaa',
-  },
-  photos: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-  },
-  photo: {
-    width: '32%',
-    height: "100%",
-    aspectRatio: 1,
-    marginBottom: 10,
-  },
-});
 
 export default App;

@@ -1,7 +1,9 @@
 Code Experiments using ChatGPT
 ==============================
 
-Experimenting and learning new technologies **together** with ChatGPT 
+Experimenting and learning new technologies **together** with ChatGPT.
+
+Nothing here is production-code, this is just a playground to learn new technologies, quicklier with ChatGPT!
 
 
 ## Commits
