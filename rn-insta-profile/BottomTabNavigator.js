@@ -5,6 +5,7 @@ import { AntDesign, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
 import ProfileScreen from './ProfileScreen';
 import HomeScreen from './HomeScreen';
 import SearchScreen from './SearchScreen';
+import AddPostScreen from './AddPostScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,7 +44,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Add"
-        component={() => null}
+        component={AddPostScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons name="plus-box" size={32} color="#00a3ff" />
