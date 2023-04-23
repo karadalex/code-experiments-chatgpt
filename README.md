@@ -32,3 +32,6 @@ Some commits may also include the prompts that were used to generate the code of
 - FastAPI
 - React Native
 - qiskit
+- GRaphQL
+- PostgreSQL
+- Kubernetes
