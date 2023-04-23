@@ -1,10 +1,12 @@
 from fastapi import FastAPI
 from fastapi import Depends
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import create_engine, Column, Integer, String as SQLString
 from sqlalchemy.orm import declarative_base, sessionmaker
 from graphene import ObjectType, String, Schema, Field
 from graphene_sqlalchemy import SQLAlchemyObjectType, SQLAlchemyConnectionField
+import graphene
+import uvicorn
 
 # Initialize FastAPI app
 app = FastAPI()
@@ -18,8 +20,8 @@ Base = declarative_base()
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(50))
-    email = Column(String(50))
+    name = Column(SQLString(50))
+    email = Column(SQLString(50))
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
