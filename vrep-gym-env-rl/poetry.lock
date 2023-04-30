@@ -65,39 +65,6 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
-name = "psutil"
-version = "5.9.5"
-description = "Cross-platform lib for process and system monitoring in Python."
-category = "main"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-
-[package.extras]
-test = ["ipaddress", "mock", "enum34", "pywin32", "wmi"]
-
-[[package]]
-name = "pylocker"
-version = "3.1.0"
-description = "PYthon LOCKER or pylocker package provides a pythonic way to create locking mechanism that can be used for general purposes as well as for locking files upon reading or writing."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-psutil = "*"
-
-[[package]]
-name = "pyrep"
-version = "3.2.0"
-description = "This package provides a pythonic way to organize dumping and pulling python objects and other type of files to a folder or a directory that is called repository."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-pylocker = ">=2.1.0"
-
-[[package]]
 name = "zipp"
 version = "3.15.0"
 description = "Backport of pathlib-compatible object wrapper for zip files"
@@ -112,7 +79,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "130624fb1da9210dfdba0c90a57b0d3f93b54102d3a4df9475e104e31f851c97"
+content-hash = "057033d0ceda29ea44e2cde9348b07f0eb538d740c93beb7a84d25056c9fa5a7"
 
 [metadata.files]
 cloudpickle = []
@@ -120,7 +87,4 @@ gym = []
 gym-notices = []
 importlib-metadata = []
 numpy = []
-psutil = []
-pylocker = []
-pyrep = []
 zipp = []

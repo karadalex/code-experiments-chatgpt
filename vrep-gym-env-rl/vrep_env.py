@@ -1,14 +1,14 @@
 import gym
 import numpy as np
 import pyrep
-# import pyrep.robots
+from pyrep.robots.arms.ur5 import UR5
 
 
 class VREPEnv(gym.Env):
     def __init__(self):
         self.pyrep = pyrep.PyRep()
         self.pyrep.launch('./vrep-scene.ttt')
-        self.agent = pyrep.robots.UR5('UR5')
+        self.agent = UR5()
         self.action_space = gym.spaces.Box(
             low=-1.0,
             high=1.0,

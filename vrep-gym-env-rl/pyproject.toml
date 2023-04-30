@@ -8,7 +8,6 @@ authors = ["Alexios Karadimos <karadalex@gmail.com>"]
 python = "^3.8"
 gym = "^0.26.2"
 numpy = "^1.24.3"
-pyrep = "^3.2.0"
 
 [tool.poetry.dev-dependencies]
 

@@ -1,7 +1,7 @@
 import gym
-import vrep_env
+from vrep_env import VREPEnv
 
-env = gym.make('VREPEnv-v0')
+env = VREPEnv()
 observation = env.reset()
 for t in range(1000):
     action = env.action_space.sample()
