@@ -29,13 +29,15 @@ def hf_layer(input_layer):
     return output
 
 # Define the output layer
-output_size = 2
+# output_size = 2
+output_size = rl_layer_size + hf_layer_size
 output_weights = np.random.rand(output_size, rl_layer_size)
-output_bias = np.random.rand(output_size, 1)
+# output_bias = np.random.rand(output_size, 1)
+output_bias = np.random.rand(rl_layer_size, 1)
 
 def output_layer(input_layer):
     # Calculate the output of the output layer
-    output = np.dot(output_weights, input_layer) + output_bias
+    output = np.dot(np.transpose(output_weights), input_layer) + output_bias
     # Apply the softmax function to the output to get a probability distribution
     output = np.exp(output) / np.sum(np.exp(output))
     return output
